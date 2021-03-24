@@ -9,9 +9,12 @@ class Review extends Model {
 					defaultValue: DataTypes.UUIDV1,
 					primaryKey: true,
 				},
-				name: DataTypes.STRING,
 				content: {
 					type: DataTypes.STRING,
+					allowNull: false,
+				},
+				stars: {
+					type: DataTypes.INTEGER,
 					allowNull: false,
 				},
 				user_id: {

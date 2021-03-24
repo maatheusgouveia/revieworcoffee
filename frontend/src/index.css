@@ -1,0 +1,24 @@
+* {
+	margin: 0;
+	padding: 0;
+	outline: 0;
+	box-sizing: border-box;
+	background-color: transparent;
+}
+
+body,
+#root {
+	font-family: 'roboto', cursive;
+	-webkit-font-smoothing: antialiased;
+	height: 100vh;
+}
+
+input,
+button,
+textarea {
+	font-family: 400 18px roboto, Helvetica, sans-serif;
+}
+
+button {
+	cursor: pointer;
+}
