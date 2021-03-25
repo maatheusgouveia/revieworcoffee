@@ -20,7 +20,9 @@ import {
 	ImgContainer,
 	InputsContainer,
 	ReviewsContainer,
+	Header,
 } from './styles';
+import LoginDialog from '~/components/LoginDialog';
 
 export default function Home() {
 	const [reviews, setReviews] = useState([
@@ -53,7 +55,9 @@ export default function Home() {
 		setSearching(!!e.target.value);
 
 		const values = reviews.filter(item =>
-			item.content.includes(e.target.value)
+			item.content
+				.toLocaleLowerCase()
+				.includes(e.target.value.toLocaleLowerCase())
 		);
 
 		setSearch(values);
@@ -61,9 +65,11 @@ export default function Home() {
 
 	return (
 		<Container>
-			<header>
+			<Header>
 				<img src={logo} alt="Beer or Coffee" />
-			</header>
+
+				<LoginDialog />
+			</Header>
 
 			<main>
 				<Typography variant="h4" component="h1">

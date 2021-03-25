@@ -20,13 +20,6 @@ export const Avatar = styled.img`
 	margin-bottom: 10px;
 `;
 
-export const CustomTextArea = styled(TextareaAutosize)`
-	width: 80%;
-	border-radius: 5px;
-	margin-bottom: 20px;
-	padding: 5px;
-`;
-
 export const CustomRating = styled(Rating)`
 	svg.MuiSvgIcon-root {
 		width: 50px;
@@ -34,4 +27,12 @@ export const CustomRating = styled(Rating)`
 	}
 
 	margin-bottom: 20px;
+	margin-top: 10px;
+`;
+
+export const CustomTextArea = styled(TextareaAutosize)`
+	width: 80%;
+	border-radius: 5px;
+	margin-bottom: 20px;
+	padding: 5px;
 `;

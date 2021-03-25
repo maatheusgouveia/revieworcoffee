@@ -20,6 +20,24 @@ export const Container = styled.div`
 	}
 `;
 
+export const Header = styled.header`
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+
+	button {
+		color: #fff;
+		font-size: 18px;
+		font-weight: bold;
+
+		border: 1px solid #fff;
+		border-radius: 10px;
+		min-width: 100px;
+		height: 40px;
+		padding: 3px;
+	}
+`;
+
 export const SearchInput = styled.input`
 	height: 50px;
 	border-radius: 5px;
