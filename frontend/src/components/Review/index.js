@@ -9,7 +9,7 @@ import avatar from '~/assets/avatar-blank.png';
 import { Avatar, ReviewContent, ReviewDate, UserName } from './styles';
 
 export default function Review({ data }) {
-	const { content, user, created_at, stars } = data;
+	const { content, user, createdAt, stars } = data;
 
 	return (
 		<Grid container style={{ marginBottom: 15 }}>
@@ -27,13 +27,14 @@ export default function Review({ data }) {
 			</Grid>
 
 			<Grid item xs={10}>
-				<UserName>{user.name}</UserName>
+				<UserName>{user?.name}</UserName>
 
 				<ReviewDate>
-					{formatDistanceToNow(created_at, {
-						addSuffix: true,
-						locale: br,
-					})}
+					{createdAt &&
+						formatDistanceToNow(new Date(createdAt), {
+							addSuffix: true,
+							locale: br,
+						})}
 				</ReviewDate>
 
 				<ReviewContent>{content}</ReviewContent>

@@ -1,8 +1,7 @@
-import { forwardRef, useState } from 'react';
+import { forwardRef, useEffect, useState } from 'react';
 import { Grid, TextField, Typography, Button } from '@material-ui/core';
 import { Formik } from 'formik';
 import * as Yup from 'yup';
-import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { DialogContent, Dialog, Slide } from '@material-ui/core';
 
@@ -15,8 +14,7 @@ const Transition = forwardRef(function Transition(props, ref) {
 
 export default function LoginDialog() {
 	const dispatch = useDispatch();
-	const { name } = useSelector(state => state.user.profile);
-	console.log(name);
+	const name = useSelector(state => state.user?.profile?.name);
 
 	const [open, setOpen] = useState(false);
 
@@ -41,6 +39,10 @@ export default function LoginDialog() {
 	function handleClose() {
 		setOpen(false);
 	}
+
+	useEffect(() => {
+		name && setOpen(false);
+	}, [name]);
 
 	return (
 		<div>
@@ -80,10 +82,14 @@ export default function LoginDialog() {
 								errors,
 								handleSubmit,
 							}) => (
-								<Form onSubmit={handleSubmit}>
+								<Form
+									onSubmit={handleSubmit}
+									style={{ width: '95%' }}
+								>
 									<Grid item xs>
 										<TextField
 											required
+											variant="outlined"
 											fullWidth
 											label="E-mail"
 											name="email"
@@ -98,6 +104,7 @@ export default function LoginDialog() {
 									<Grid item xs>
 										<TextField
 											required
+											variant="outlined"
 											fullWidth
 											label="Senha"
 											name="password"
@@ -116,31 +123,12 @@ export default function LoginDialog() {
 										style={{ marginTop: 30 }}
 									>
 										<Button
-											type="button"
-											variant="contained"
-											color="secondary"
-											onClick={() => {}}
-										>
-											Voltar
-										</Button>
-
-										<Button
 											type="submit"
 											variant="contained"
 											color="primary"
 										>
 											Entrar
 										</Button>
-									</Grid>
-
-									<Grid
-										container
-										justify="center"
-										style={{ marginTop: 30 }}
-									>
-										<Link to="/signup">
-											Ainda não tem uma conta? Crie agora!
-										</Link>
 									</Grid>
 								</Form>
 							)}

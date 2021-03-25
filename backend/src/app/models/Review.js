@@ -29,7 +29,7 @@ class Review extends Model {
 					references: { model: 'spaces', key: 'id' },
 					onUpdate: 'CASCADE',
 					onDelete: 'CASCADE',
-					allowNull: false,
+					allowNull: true,
 				},
 			},
 			{
@@ -38,6 +38,14 @@ class Review extends Model {
 		);
 
 		return this;
+	}
+
+	static associate(models) {
+		this.hasOne(models.User, {
+			sourceKey: 'user_id',
+			foreignKey: 'id',
+			as: 'user',
+		});
 	}
 }
 
