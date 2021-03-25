@@ -26,6 +26,10 @@
 
 -   Docker
 
+## Dependências
+
+Entre na pasta frontend do projeto e execute o comando `yarn ou npm i`, depois entre na pasta backend e faça o mesmo
+
 ## Preparar container do BD
 
 ### MySQL
@@ -43,6 +47,14 @@ Depois de criar os containers será necessário criar um banco de dados no mysql
 Em seguida execute o comando `yarn seed` para que o usuário de testes seja criado
 
 Depois desta etapa você será capaz de fazer login no sistema com o usuário `test@test.com`, senha `123456` e fazer uma review
+
+### Executando o frontend
+
+Execute o comando `yarn start ou npm start`
+
+### Executando o backend
+
+Certifique-se de que o container está rodando e execute o comando `yarn dev ou npm run dev`
 
 ## Tela de review
 
