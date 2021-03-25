@@ -1,5 +1,31 @@
 # Review or coffee
 
+## Tecnologias utilizadas
+
+### Frontend
+
+-   React
+
+-   Redux
+
+-   Redux Saga
+
+-   Redux Persist
+
+### Backend
+
+-   Node
+
+-   Express
+
+-   Sequelize
+
+## Requisitos
+
+-   Node na versão mais recente
+
+-   Docker
+
 ## Preparar container do BD
 
 ### MySQL
